@@ -1,0 +1,27 @@
+﻿@model List<TLSNewsScraper.Data.NewsArticle>
+
+<table class="table table-hover table-striped table-bordered">
+    <tr>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><img style="width: 150px; max-height: 200px;" src="@item.Image" /></td>
+            <td>
+                <a href="@item.Link" target="_blank">@item.Title</a>
+            </td>
+            <td>
+                @if (item.Date != null)
+                {
+                    <span>@item.Date)</span>
+                }
+                else
+                {<span></span>
+                }
+            </td>
+        </tr>
+    }
+</table>
